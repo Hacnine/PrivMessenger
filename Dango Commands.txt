@@ -1,0 +1,19 @@
+python -m venv venv
+
+pip install django
+
+venv\scripts\activate
+
+python manage.py createsuperuser
+
+django-admin startproject dummyprojectbackend .
+
+python manage.py startapp students
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py sqlmigrate enroll 001
+
+python manage.py runserver

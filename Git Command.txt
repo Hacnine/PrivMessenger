@@ -1,0 +1,26 @@
+git branch
+
+git status
+
+git add .
+
+git commit -m ""
+
+git push -u origin main
+
+0.0.ssh-keygen
+0.1.cat ~/.ssh/jamil.pub
+
+
+eval `ssh-agent -s`
+
+ssh-add ~/.ssh/sawbah
+
+verify check (not nessasary)
+ssh-add -l
+
+git push -u origin main
+
+
+
+git config --global user.name "Your New Username"
