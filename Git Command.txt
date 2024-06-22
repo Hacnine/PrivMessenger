@@ -1,6 +1,6 @@
-git branch
+eval `ssh-agent -s`
 
-git status
+ssh-add ~/.ssh/dummybackends
 
 git add .
 
@@ -8,13 +8,16 @@ git commit -m ""
 
 git push -u origin main
 
-0.0.ssh-keygen
-0.1.cat ~/.ssh/jamil.pub
+
+git branch
+
+git status
 
 
-eval `ssh-agent -s`
 
-ssh-add ~/.ssh/sawbah
+ssh-keygen
+
+cat ~/.ssh/jamil.pub
 
 verify check (not nessasary)
 ssh-add -l
