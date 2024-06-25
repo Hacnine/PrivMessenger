@@ -1,22 +1,49 @@
 from rest_framework import serializers
-from .models import User
+from .models import *
 
 
-class UserSerializer(serializers.ModelSerializer):
+# class MessageSerializer(serializers.Serializer):
+#     user = serializers.StringRelatedField()  # Use StringRelatedField for user
+#     message = models.CharField(max_length=2000,  null=True, blank=True)
+#     img = models.ImageField(null=True, blank=True)
+#     file = models.FileField(null=True, blank=True)
+#
+#     def to_representation(self, instance):
+#         data = super().to_representation(instance)
+#         return data
+#
+#     def create(self, validated_data):
+#         return Message.objects.create(**validated_data)
+
+class MessageSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+
     class Meta:
-        model = User
-        fields = ['id', 'username', 'passmessage', 'password']
+        model = Message
+        fields = '__all__'
+        read_only_fields = ['id', 'user']
+ 
+    # def create(self, validated_data):
+    #     return Message.objects.create(**validated_data)
 
-    def create(self, validated_data):
-        password = validated_data.pop('password', None)
-        instance = self.Meta.model(**validated_data)
-        if password is not None:
-            instance.set_password(password)
-        instance.save()
-        return instance
+    # def update(self, instance, validated_data):
+    #     instance.message = validated_data.get('message', instance.message)
+    #
+    #     if 'img' in validated_data:
+    #         instance.img = validated_data['img']
+    #
+    #     if 'file' in validated_data:
+    #         instance.file = validated_data['file']
+    #
+    #     instance.save()
+    #     return instance
 
-    def validate_username(self, value):
-        # Check if the username is unique
-        if User.objects.filter(username=value).exists():
-            raise serializers.ValidationError('Username must be unique.')
-        return value
+
+class GroupSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField()  # Use StringRelatedField for user
+    group_name = serializers.CharField(max_length=150, allow_blank=False)  # Set allow_blank=False
+    group_img = serializers.ImageField()
+
+    class Meta:
+        model = Group
+        fields = '__all__'

@@ -1,9 +1,36 @@
 from django.urls import path, include
-from .views import RegisterView, LoginView, UserView, LogoutView
+from . import views, GenericApiView, ConcreateView, ViewSet
+from rest_framework.routers import DefaultRouter
 
+# Creating Router Objects
+router = DefaultRouter()
+
+# Register StudentViewSet with Router
+router.register('message', ViewSet.MessageViewSet, basename='message')
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login'),
-    path('user/', UserView.as_view(), name='user'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path('all/', include(router.urls)),
 ]
+
+# urlpatterns = [
+#     path('all/', ConcreateView.MessageList.as_view()),
+#     path('post/', ConcreateView.CreateMessage.as_view()),
+#     path('<int:pk>/', ConcreateView.RetrieveMessage.as_view()),
+#     path('edit/<int:pk>/', ConcreateView.UpdateMessage.as_view()),
+#     path('delete/<int:pk>/', ConcreateView.DestroyMessage.as_view())
+# ]
+
+# urlpatterns = [
+#     path('all/', GenericApiView.MessageList.as_view()),
+#     path('post/', GenericApiView.CreateMessage.as_view()),
+#     path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
+#     path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
+#     path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
+# ]
+
+# urlpatterns = [
+#     path('all/', views.message_list),
+#     path('<int:pk>/', views.message),
+#     path('post/', views.MessagePost.as_view()),
+#     path('edit/<int:pk>/', views.edit_message),
+#     path('delete/<int:pk>/', views.delete_message)
+# ]

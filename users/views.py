@@ -1,102 +1,105 @@
-from django.shortcuts import render
-from rest_framework.views import APIView
-from .serializers import UserSerializer
+import io
+from rest_framework import generics
 from rest_framework.response import Response
-from rest_framework.exceptions import AuthenticationFailed
+from .models import *
+from .serializers import *
+from rest_framework.parsers import JSONParser
+from rest_framework.renderers import JSONRenderer
+from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
-from .models import User
-import jwt, datetime
+from rest_framework.decorators import api_view
+from rest_framework import status
+from rest_framework.views import APIView
 
 
-class RegisterView(APIView):
-
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
+def message_list(request):
+    stu = Message.objects.all()
+    serializer = MessageSerializer(stu, many=True)
+    json_data = JSONRenderer().render(serializer.data)
+    return HttpResponse(json_data, content_type='application/json')
 
 
-@method_decorator(csrf_exempt, name='dispatch')
-class LoginView(APIView):
-    def post(self, request):
-        try:
-            username = request.data['username']
-            password = request.data['password']
-
-            user = User.objects.filter(username=username).first()
-
-            if user is None:
-                raise AuthenticationFailed('User not found!')
-
-            if not user.check_password(password):
-                raise AuthenticationFailed('Incorrect password!')
-
-            payload = {
-                'id': user.id,
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
-                'iat': datetime.datetime.utcnow()
-            }
-
-            token = jwt.encode(payload, 'secret', algorithm='HS256')
-
-            response = Response()
-            response.set_cookie(key='jwt', value=token, httponly=True)
-            response.data = {
-                'jwt': token
-            }
-            return response
-        except Exception as e:
-            return Response({"error": str(e)}, status=500)
+def message(request, pk):
+    stu = Message.objects.get(id=pk)
+    serializer = MessageSerializer(stu)
+    json_data = JSONRenderer().render(serializer.data)
+    return HttpResponse(json_data, content_type='application/json')
 
 
-# class LoginView(APIView):
-#     def post(self, request):
-#         username = request.data['username']
-#         passmessage = request.data['passmessage']
-#         password = request.data['password']
-#         user = User.objects.filter(username=username).first()
+@csrf_exempt
+def message_post(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        serializer = MessageSerializer(data=python_data)
+        if serializer.is_valid():
+            serializer.save()
+            res = {'msg': 'Data Created'}
+            return JsonResponse(res, status=201)
+        else:
+            return JsonResponse(serializer.errors, status=400)
+    else:
+        return JsonResponse({'error': 'Only POST method is allowed'}, status=405)
+
+
+class MessagePost(APIView):
+    def post(self, request, format=None):
+        serializer = MessageSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'msg': 'Data Created'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# @csrf_exempt
+# def message_edit(request):
+#     if request.method == 'PUT':
+#         json_data = request.body
+#         stream = io.BytesIO(json_data)
+#         python_data = JSONParser.parse(stream)
+#         id = python_data.get('id')
+#         message = Message.objects.get(id=id)
+#         serializer = MessageSerializer(message, data=python_data, partial=True)
+#         if serializer.is_valid():
+#             serializer.save()
+#             res = {'msg': 'Data Updated'}
+#             json_data = JSONRenderer().render(res)
+#             return HttpResponse(json_data, content_type='application/json')
 #
-#         if user is None:
-#             raise AuthenticationFailed('User not found')
-#         if user.passmessage != passmessage:
-#             raise AuthenticationFailed('Incorrect Pass Message')
-#         if not user.check_password(password):
-#             raise AuthenticationFailed('Incorrect Password')
-#         payload = {
-#             'id': user.id,
-#             'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
-#             'iat': datetime.datetime.utcnow()
-#         }
-#         token = jwt.encode(payload, 'secret', algorithm='HS256').decode('utf-8')
-#         response = Response()
-#         response.set_cookie(key='jwt', value=token, httponly=True)
-#         response.data = {
-#             'jwt': token
-#         }
-#         return response
+
+@api_view(['PUT', 'PATCH'])
+@csrf_exempt
+def edit_message(request, pk=None):
+    try:
+        message = Message.objects.get(pk=pk)
+    except Message.DoesNotExist:
+        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)
+    partial = request.method == 'PATCH'
+    serializer = MessageSerializer(message, data=request.data, partial=partial)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'msg': 'Successfully updated'}, status=status.HTTP_200_OK)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserView(APIView):
-    def get(self, request):
-        token = request.COOKIES.get('jwt')
+@api_view(['DELETE'])
+def delete_message(request, pk=None):
+    try:
+        message = Message.objects.get(pk=pk)
+        message.delete()
+        return Response({'msg': 'Message Successfully deleted'}, status=status.HTTP_200_OK)
+    except Message.DoesNotExist:
+        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)
 
-        if not token:
-            raise AuthenticationFailed('Unauthenticated!')
-        try:
-            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
-        except jwt.ExpiredSignatureError:
-            raise AuthenticationFailed('Un Authenticated')
-        user = User.objects.filter(id=payload['id']).first()
-        return Response(token)
-
-
-class LogoutView(APIView):
-    def post(self, request):
-        response = Response()
-        response.delete_cookie('jwt')
-        response.data = {
-            'message': 'log out'
-        }
-        return response
+# class MessageListCreateView(generics.ListCreateAPIView):
+#     queryset = Message.objects.all()
+#     serializer_class = MessageSerializer
+#
+#
+# class MessageRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Message.objects.all()
+#     serializer_class = MessageSerializer

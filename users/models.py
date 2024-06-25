@@ -1,26 +1,16 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 
-class User(AbstractUser):
-    username = models.CharField(max_length=255, unique=True)
-    passmessage = models.CharField(max_length=255,  default='shuvo sokal')
-    password = models.CharField(max_length=255)
-
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = []
-
-    def __str__(self):
-        return f'User: {self.username} {self.passmessage}'
+class Message(models.Model):
+    DoesNotExist = None
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.CharField(max_length=2000,  null=True, blank=True)
+    img = models.ImageField(upload_to='chat_images/', null=True, blank=True)
+    file = models.FileField(upload_to='chat_files/', null=True, blank=True)
 
 
-# class Page(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-#     # user = models.OneToOneField(User, on_delete=models.PROTECT, primary_key=True)
-#
-#     page_name = models.CharField(max_length=70)
-#     page_cat = models.CharField(max_length=70)
-#     page_publish_data = models.DateField()
-
-
+class Group(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, limit_choices_to={'is_staff': True})
+    group_name = models.CharField(max_length=150,)
+    group_img = models.ImageField(upload_to='group_profile_images/')
