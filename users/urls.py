@@ -1,15 +1,30 @@
 from django.urls import path, include
-from . import views, GenericApiView, ConcreateView, ViewSet
+from . import views, GenericApiView, ConcreateView, ViewSet, ModelViewSet
 from rest_framework.routers import DefaultRouter
 
+''' For ModelView Set '''
 # Creating Router Objects
 router = DefaultRouter()
 
 # Register StudentViewSet with Router
-router.register('message', ViewSet.MessageViewSet, basename='message')
+router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
+router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='message')
+
 urlpatterns = [
     path('all/', include(router.urls)),
+    path('allreadonly/', include(router.urls)),
+
 ]
+
+''' For View Set '''
+# # Creating Router Objects
+# router = DefaultRouter()
+#
+# # Register StudentViewSet with Router
+# router.register('message', ViewSet.MessageViewSet, basename='message')
+# urlpatterns = [
+#     path('all/', include(router.urls)),
+# ]
 
 # urlpatterns = [
 #     path('all/', ConcreateView.MessageList.as_view()),
