@@ -8,7 +8,7 @@ router = DefaultRouter()
 
 # Register StudentViewSet with Router
 router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
-router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='message')
+# router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
 
 urlpatterns = [
     path('all/', include(router.urls)),
