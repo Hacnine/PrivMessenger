@@ -2,19 +2,27 @@ from django.urls import path, include
 from . import views, GenericApiView, ConcreateView, ViewSet, ModelViewSet
 from rest_framework.routers import DefaultRouter
 
-''' For ModelView Set '''
-# Creating Router Objects
-router = DefaultRouter()
-
-# Register StudentViewSet with Router
-router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
-# router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
 
 urlpatterns = [
-    path('all/', include(router.urls)),
-    # path('allreadonly/', include(router.urls)),
-
+    path('all/', views.message_list),
+    path('<int:pk>/', views.message),
+    path('post/', views.MessagePost.as_view()),
+    path('edit/<int:pk>/', views.edit_message),
+    path('delete/<int:pk>/', views.delete_message)
 ]
+
+''' For ModelView Set '''
+# # Creating Router Objects
+# router = DefaultRouter()
+#
+# # Register StudentViewSet with Router
+# router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
+# # router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
+#
+# urlpatterns = [
+#     path('all/', include(router.urls)),
+#     # path('allreadonly/', include(router.urls)),
+# ]
 
 ''' For View Set '''
 # # Creating Router Objects
@@ -40,14 +48,6 @@ urlpatterns = [
 #     path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
 #     path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
 #     path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
-# ]
-
-# urlpatterns = [
-#     path('all/', views.message_list),
-#     path('<int:pk>/', views.message),
-#     path('post/', views.MessagePost.as_view()),
-#     path('edit/<int:pk>/', views.edit_message),
-#     path('delete/<int:pk>/', views.delete_message)
 # ]
 
 

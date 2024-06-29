@@ -7,11 +7,15 @@ from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
+@authentication_classes([BasicAuthentication])
+@permission_classes(IsAuthenticated)
 def message_list(request):
     stu = Message.objects.all()
     serializer = MessageSerializer(stu, many=True)
@@ -27,6 +31,8 @@ def message(request, pk):
 
 
 @csrf_exempt
+@authentication_classes([BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def message_post(request):
     if request.method == 'POST':
         json_data = request.body
