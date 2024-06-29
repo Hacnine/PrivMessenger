@@ -5,17 +5,14 @@ from rest_framework.permissions import (IsAuthenticated, AllowAny, IsAdminUser, 
 from .models import *
 from .serializers import *
 from rest_framework import viewsets
+from .custom_permission import MyPermission
 
 
 class MessageModelViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
     authentication_classes = [SessionAuthentication]
-    # permission_classes = [IsAuthenticated]
-    # permission_classes = [IsAdminUser]
-    # permission_classes = [IsAuthenticatedOrReadOnly]
-    # permission_classes = [DjangoModelPermissions]
-    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
+    permission_classes = [MyPermission]
 
 
 class MessageReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):
