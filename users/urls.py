@@ -12,7 +12,7 @@ router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
 
 urlpatterns = [
     path('all/', include(router.urls)),
-    path('allreadonly/', include(router.urls)),
+    # path('allreadonly/', include(router.urls)),
 
 ]
 
@@ -48,4 +48,10 @@ urlpatterns = [
 #     path('post/', views.MessagePost.as_view()),
 #     path('edit/<int:pk>/', views.edit_message),
 #     path('delete/<int:pk>/', views.delete_message)
+# ]
+
+
+# urlpatterns = [
+#     path('set-session/', views.set_session, name='set-session'),
+#     path('get-session/', views.get_session, name='get-session'),
 # ]

@@ -95,6 +95,7 @@ def delete_message(request, pk=None):
     except Message.DoesNotExist:
         return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)
 
+
 # class MessageListCreateView(generics.ListCreateAPIView):
 #     queryset = Message.objects.all()
 #     serializer_class = MessageSerializer
@@ -103,3 +104,12 @@ def delete_message(request, pk=None):
 # class MessageRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = Message.objects.all()
 #     serializer_class = MessageSerializer
+
+def set_session(request):
+    request.session['name'] = 'Hadi'
+    return JsonResponse({'message': 'Session set'})
+
+
+def get_session(request):
+    value = request.session.get('name', default='Session key not set')
+    return JsonResponse({'name': value})
