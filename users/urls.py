@@ -1,28 +1,22 @@
 from django.urls import path, include
+from rest_framework.authtoken.views import obtain_auth_token
 from . import views, GenericApiView, ConcreateView, ViewSet, ModelViewSet
 from rest_framework.routers import DefaultRouter
-
-
-urlpatterns = [
-    path('all/', views.message_list),
-    path('<int:pk>/', views.message),
-    path('post/', views.MessagePost.as_view()),
-    path('edit/<int:pk>/', views.edit_message),
-    path('delete/<int:pk>/', views.delete_message)
-]
+from .auth import CustomAuthToken
 
 ''' For ModelView Set '''
-# # Creating Router Objects
-# router = DefaultRouter()
-#
-# # Register StudentViewSet with Router
-# router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
-# # router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
-#
-# urlpatterns = [
-#     path('all/', include(router.urls)),
-#     # path('allreadonly/', include(router.urls)),
-# ]
+# Creating Router Objects
+router = DefaultRouter()
+
+# Register StudentViewSet with Router
+router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
+# router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
+
+urlpatterns = [
+    path('all/', include(router.urls)),
+    # path('allreadonly/', include(router.urls)),
+    # path('gettoken/', CustomAuthToken.as_view())
+]
 
 ''' For View Set '''
 # # Creating Router Objects
@@ -54,4 +48,12 @@ urlpatterns = [
 # urlpatterns = [
 #     path('set-session/', views.set_session, name='set-session'),
 #     path('get-session/', views.get_session, name='get-session'),
+# ]
+
+# urlpatterns = [
+#     path('all/', views.message_list),
+#     path('<int:pk>/', views.message),
+#     path('post/', views.MessagePost.as_view()),
+#     path('edit/<int:pk>/', views.edit_message),
+#     path('delete/<int:pk>/', views.delete_message)
 # ]
