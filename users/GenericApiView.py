@@ -8,6 +8,10 @@ class MessageList(GenericAPIView, ListModelMixin):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
+    def get_queryset(self):
+        user = self.request.user
+        return Message.objects.filter(message=user)
+
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 

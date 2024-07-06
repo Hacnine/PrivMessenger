@@ -5,18 +5,18 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 ''' For ModelView Set '''
-# Creating Router Objects
-router = DefaultRouter()
-
-# Register StudentViewSet with Router
-router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
-# router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
-
-urlpatterns = [
-    path('all/', include(router.urls)),
-    # path('allreadonly/', include(router.urls)),
-
-]
+# # Creating Router Objects
+# router = DefaultRouter()
+#
+# # Register StudentViewSet with Router
+# router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
+# # router.register('read_only_message', ModelViewSet.MessageReadOnlyModelViewSet, basename='model_view_set_message')
+#
+# urlpatterns = [
+#     path('all/', include(router.urls)),
+#     # path('allreadonly/', include(router.urls)),
+#
+# ]
 
 ''' For View Set '''
 # # Creating Router Objects
@@ -36,13 +36,13 @@ urlpatterns = [
 #     path('delete/<int:pk>/', ConcreateView.DestroyMessage.as_view())
 # ]
 
-# urlpatterns = [
-#     path('all/', GenericApiView.MessageList.as_view()),
-#     path('post/', GenericApiView.CreateMessage.as_view()),
-#     path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
-#     path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
-#     path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
-# ]
+urlpatterns = [
+    path('all/', GenericApiView.MessageList.as_view()),
+    path('post/', GenericApiView.CreateMessage.as_view()),
+    path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
+    path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
+    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
+]
 
 
 # urlpatterns = [
