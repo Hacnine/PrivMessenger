@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
 from . import views, GenericApiView, ConcreateView, ViewSet, ModelViewSet
 from rest_framework.routers import DefaultRouter
-from .auth import CustomAuthToken
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 ''' For ModelView Set '''
 # Creating Router Objects
@@ -15,7 +15,7 @@ router.register('message', ModelViewSet.MessageModelViewSet, basename='message')
 urlpatterns = [
     path('all/', include(router.urls)),
     # path('allreadonly/', include(router.urls)),
-    # path('gettoken/', CustomAuthToken.as_view())
+
 ]
 
 ''' For View Set '''
