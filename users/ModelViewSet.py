@@ -16,7 +16,7 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     serializer_class = MessageSerializer
     authentication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    throttle_classes = [AnonRateThrottle, UserRateThrottle]
+    throttle_classes = [AnonRateThrottle, AbdullahRateThrottle]
 
 
 class MessageReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):
