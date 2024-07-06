@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import django_filters.rest_framework
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'django_filters',
     'rest_framework.authtoken',
     'users',
 
@@ -112,18 +115,27 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-'''Global AUTHENTICATION Settings for Rest Framework - ALl view'''
+'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.BasicAuthentication'],
 #     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']
 
 # }
 
-'Global Throttling in Rest framework'
-REST_FRAMEWORK = {
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '2/day',
-        'user': '5/hour',
-        'abdullah': '3/minute'
-    }
-}
+'Global-Throttling in Rest framework'
+# REST_FRAMEWORK = {
+#     'DEFAULT_THROTTLE_RATES': {
+#         'anon': '2/day',
+#         'user': '5/hour',
+#         'abdullah': '3/minute'
+#     }
+# }
+
+'Global Django-Filtering in Rest framework'
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+# }
+#
+#
+
+

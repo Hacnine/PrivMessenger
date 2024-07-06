@@ -2,16 +2,15 @@ from .models import *
 from .serializers import *
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class MessageList(GenericAPIView, ListModelMixin):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-
-    def get_queryset(self):
-        user = self.request.user
-        return Message.objects.filter(message=user)
-
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['message']
+    #   http://127.0.0.1:8000/msg/all/?message=As%20Salam
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
