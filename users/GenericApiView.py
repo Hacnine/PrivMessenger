@@ -1,3 +1,4 @@
+from .custom_pagintaion import CustomPagination
 from .models import *
 from .serializers import *
 from rest_framework.generics import GenericAPIView
@@ -8,8 +9,7 @@ from rest_framework.filters import SearchFilter
 class MessageList(GenericAPIView, ListModelMixin):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    filter_backends = [SearchFilter]
-    search_fields = ['message']
+    pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
