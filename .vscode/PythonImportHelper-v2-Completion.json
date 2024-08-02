@@ -25,6 +25,48 @@
         "documentation": {}
     },
     {
+        "label": "django_filters.rest_framework",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django_filters.rest_framework",
+        "description": "django_filters.rest_framework",
+        "detail": "django_filters.rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "rest_framework.pagination",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "rest_framework.pagination",
+        "description": "rest_framework.pagination",
+        "detail": "rest_framework.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "LimitOffsetPagination",
+        "importPath": "rest_framework.pagination",
+        "description": "rest_framework.pagination",
+        "isExtraImport": true,
+        "detail": "rest_framework.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -81,11 +123,51 @@
         "documentation": {}
     },
     {
-        "label": "views",
-        "importPath": "resttest",
-        "description": "resttest",
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "resttest",
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -137,11 +219,123 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -178,6 +372,78 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "generics",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -191,6 +457,70 @@
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -218,11 +548,131 @@
         "documentation": {}
     },
     {
+        "label": "JSONRenderer",
+        "importPath": "rest_framework.renderers",
+        "description": "rest_framework.renderers",
+        "isExtraImport": true,
+        "detail": "rest_framework.renderers",
+        "documentation": {}
+    },
+    {
+        "label": "JSONRenderer",
+        "importPath": "rest_framework.renderers",
+        "description": "rest_framework.renderers",
+        "isExtraImport": true,
+        "detail": "rest_framework.renderers",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseNotAllowed",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseNotAllowed",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseBadRequest",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
         "documentation": {}
     },
     {
@@ -251,6 +701,568 @@
         "documentation": {}
     },
     {
+        "label": "JSONParser",
+        "importPath": "rest_framework.parsers",
+        "description": "rest_framework.parsers",
+        "isExtraImport": true,
+        "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "JSONParser",
+        "importPath": "rest_framework.parsers",
+        "description": "rest_framework.parsers",
+        "isExtraImport": true,
+        "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_classes",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "permission_classes",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.manager",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.manager",
+        "description": "django.db.models.manager",
+        "detail": "django.db.models.manager",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenVerifyView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenVerifyView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "importPath": "students.models",
+        "description": "students.models",
+        "isExtraImport": true,
+        "detail": "students.models",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "ObtainAuthToken",
+        "importPath": "rest_framework.authtoken.views",
+        "description": "rest_framework.authtoken.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
+        "label": "obtain_auth_token",
+        "importPath": "rest_framework.authtoken.views",
+        "description": "rest_framework.authtoken.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
+        "label": "ListAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "ListCreateAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "CreateAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveUpdateDestroyAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "DestroyAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "GenericAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "BaseAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "BasicAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "SessionAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "TokenAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "BasicAuthentication",
+        "importPath": "rest_framework.authentication",
+        "description": "rest_framework.authentication",
+        "isExtraImport": true,
+        "detail": "rest_framework.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationFailed",
+        "importPath": "rest_framework.exceptions",
+        "description": "rest_framework.exceptions",
+        "isExtraImport": true,
+        "detail": "rest_framework.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "BasePermission",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "AllowAny",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAdminUser",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticatedOrReadOnly",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "DjangoModelPermissions",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "DjangoModelPermissionsOrAnonReadOnly",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "ListModelMixin",
+        "importPath": "rest_framework.mixins",
+        "description": "rest_framework.mixins",
+        "isExtraImport": true,
+        "detail": "rest_framework.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "CreateModelMixin",
+        "importPath": "rest_framework.mixins",
+        "description": "rest_framework.mixins",
+        "isExtraImport": true,
+        "detail": "rest_framework.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveModelMixin",
+        "importPath": "rest_framework.mixins",
+        "description": "rest_framework.mixins",
+        "isExtraImport": true,
+        "detail": "rest_framework.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateModelMixin",
+        "importPath": "rest_framework.mixins",
+        "description": "rest_framework.mixins",
+        "isExtraImport": true,
+        "detail": "rest_framework.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "DestroyModelMixin",
+        "importPath": "rest_framework.mixins",
+        "description": "rest_framework.mixins",
+        "isExtraImport": true,
+        "detail": "rest_framework.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "SearchFilter",
+        "importPath": "rest_framework.filters",
+        "description": "rest_framework.filters",
+        "isExtraImport": true,
+        "detail": "rest_framework.filters",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "AnonRateThrottle",
+        "importPath": "rest_framework.throttling",
+        "description": "rest_framework.throttling",
+        "isExtraImport": true,
+        "detail": "rest_framework.throttling",
+        "documentation": {}
+    },
+    {
+        "label": "UserRateThrottle",
+        "importPath": "rest_framework.throttling",
+        "description": "rest_framework.throttling",
+        "isExtraImport": true,
+        "detail": "rest_framework.throttling",
+        "documentation": {}
+    },
+    {
+        "label": "UserRateThrottle",
+        "importPath": "rest_framework.throttling",
+        "description": "rest_framework.throttling",
+        "isExtraImport": true,
+        "detail": "rest_framework.throttling",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "getpass",
+        "importPath": "getpass",
+        "description": "getpass",
+        "isExtraImport": true,
+        "detail": "getpass",
+        "documentation": {}
+    },
+    {
+        "label": "sha256",
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "isExtraImport": true,
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -273,7 +1285,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-adnazvpoyik3q+(k12$%!y!ancwtm&g!zc3u5m%_e3v!)0xr3l'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nSECRET_KEY = 'django-insecure-adnazvpoyik3q+(k12$%!y!ancwtm&g!zc3u5m%_e3v!)0xr3l'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -282,7 +1294,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-adnazvpoyik3q+(k12$%!y!ancwtm&g!zc3u5m%_e3v!)0xr3l'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-adnazvpoyik3q+(k12$%!y!ancwtm&g!zc3u5m%_e3v!)0xr3l'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -291,7 +1303,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -300,7 +1312,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = []\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'corsheaders',",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -309,7 +1321,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'corsheaders',\n    'users',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'corsheaders',\n    'django_filters',",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -408,7 +1420,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Adjust this to match the origin of your React app\n]\nCSRF_TRUSTED_ORIGINS = [\n    \"http://localhost:5173\",\n]\n# Optional: Allow all headers and methods for simplicity\nCORS_ALLOW_ALL_ORIGINS = True\nSTATIC_URL = 'static/'\n# Default primary key field type",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Adjust this to match the origin of your React app\n]\nCSRF_TRUSTED_ORIGINS = [\n    \"http://localhost:5173\",\n]\n# Optional: Allow all headers and methods for simplicity\nCORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOW_CREDENTIALS = True\nSTATIC_URL = 'static/'",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -417,7 +1429,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\n    \"http://localhost:5173\",\n]\n# Optional: Allow all headers and methods for simplicity\nCORS_ALLOW_ALL_ORIGINS = True\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\n    \"http://localhost:5173\",\n]\n# Optional: Allow all headers and methods for simplicity\nCORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOW_CREDENTIALS = True\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''\n# REST_FRAMEWORK = {",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -426,7 +1438,16 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOW_CREDENTIALS = True\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''\n# REST_FRAMEWORK = {\n#     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.BasicAuthentication'],\n#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']\n# }\n'Global-Throttling in Rest framework'",
+        "detail": "dummyprojectbackend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_CREDENTIALS",
+        "kind": 5,
+        "importPath": "dummyprojectbackend.settings",
+        "description": "dummyprojectbackend.settings",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\nSTATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''\n# REST_FRAMEWORK = {\n#     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.BasicAuthentication'],\n#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']\n# }\n'Global-Throttling in Rest framework'\n# REST_FRAMEWORK = {",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -435,7 +1456,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''\n# REST_FRAMEWORK = {\n#     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.BasicAuthentication'],\n#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']\n# }\n'Global-Throttling in Rest framework'\n# REST_FRAMEWORK = {\n#     'DEFAULT_THROTTLE_RATES': {",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -444,7 +1465,16 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.settings",
         "description": "dummyprojectbackend.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n'''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''\n# REST_FRAMEWORK = {\n#     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.BasicAuthentication'],\n#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']\n# }\n'Global-Throttling in Rest framework'\n# REST_FRAMEWORK = {\n#     'DEFAULT_THROTTLE_RATES': {\n#         'anon': '2/day',",
+        "detail": "dummyprojectbackend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "dummyprojectbackend.settings",
+        "description": "dummyprojectbackend.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_RENDERER_CLASSES': (\n        'rest_framework.renderers.JSONRenderer',\n    ),\n    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n    'PAGE_SIZE': 5,\n}",
         "detail": "dummyprojectbackend.settings",
         "documentation": {}
     },
@@ -453,7 +1483,7 @@
         "kind": 5,
         "importPath": "dummyprojectbackend.urls",
         "description": "dummyprojectbackend.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('course/', include('resttest.urls'))\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('msg/', include('users.urls')),\n    path('auth/', include('rest_framework.urls'))\n]",
         "detail": "dummyprojectbackend.urls",
         "documentation": {}
     },
@@ -494,15 +1524,11 @@
         "documentation": {}
     },
     {
-        "label": {
-            "name": "",
-            "kind": 6,
-            "peekOfCode": "class  Course(models.Model):\n  teacher_name = models.CharField(max_length=50)\n  student_name = models.CharField(max_length=50)\n  course_duration = models.IntegerField()\n  seat = models.IntegerField()\n  def __str__(self):\n    return f'Course: {self.teacher_name} {self.student_name} {self.seat}'"
-        },
+        "label": "Course",
         "kind": 6,
         "importPath": "resttest.models",
         "description": "resttest.models",
-        "peekOfCode": "class  Course(models.Model):\n  teacher_name = models.CharField(max_length=50)\n  student_name = models.CharField(max_length=50)\n  course_duration = models.IntegerField()\n  seat = models.IntegerField()\n  def __str__(self):\n    return f'Course: {self.teacher_name} {self.student_name} {self.seat}'",
+        "peekOfCode": "class Course(models.Model):\n    DoesNotExist = None\n    teacher_name = models.CharField(max_length=50)\n    student_name = models.CharField(max_length=50)\n    course_duration = models.IntegerField()\n    seat = models.IntegerField()\n    def __str__(self):\n        return f'Course: {self.teacher_name} {self.student_name} {self.seat}'",
         "detail": "resttest.models",
         "documentation": {}
     },
@@ -511,7 +1537,7 @@
         "kind": 6,
         "importPath": "resttest.serializers",
         "description": "resttest.serializers",
-        "peekOfCode": "class CourseSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Course\n        fields = ['teacher_name', 'student_name', 'course_duration', 'seat']\n    def create(self, validated_data):\n        return Course.objects.create(**validated_data)\n# from rest_framework import serializers\n# from .models import Course\n# class CourseSerializer(serializers.Serializer):\n#     teacher_name = serializers.CharField(max_length=50)",
+        "peekOfCode": "class CourseSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Course\n        fields = ['teacher_name', 'student_name', 'course_duration', 'seat']\n    # {\"teacher_name\": \"abn\", \"student_name\": \"SHS\", \"course_duration\": 6, \"seat\": 45}\n    # def create(self, validated_data):\n    #     return Course.objects.create(**validated_data)\n    #\n    # def update(self, instance, validated_data):\n    #     instance.teacher_name = validated_data.get('teacher_name', instance.teacher_name)",
         "detail": "resttest.serializers",
         "documentation": {}
     },
@@ -520,7 +1546,7 @@
         "kind": 5,
         "importPath": "resttest.urls",
         "description": "resttest.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.course_info, name=\"course_index\"),\n    path(\"<int:pk>\", views.single_course_info, name=\"course_detail\"),\n    path('createcourse/', views.create_course, name=\"createcourse\")\n]",
+        "peekOfCode": "urlpatterns = [\n    # path(\"\", views.course_info, name=\"course_index\"),\n    path('create/', views.create_course, name='create_course'),\n    path('info/', views.course_info, name=\"list_courses\"),\n    path('info/<int:pk>/', views.course_info, name=\"get_course\"),\n    path('update/<int:pk>/', views.update_course, name=\"update_course\"),\n    path('delete/<int:pk>/', views.delete_course, name=\"delete_course\"),\n    # path('delete/<int:id>/', views.delete_course, name='delete')\n]",
         "detail": "resttest.urls",
         "documentation": {}
     },
@@ -529,16 +1555,7 @@
         "kind": 2,
         "importPath": "resttest.views",
         "description": "resttest.views",
-        "peekOfCode": "def course_info(request):\n    # complex data\n    course = Course.objects.all()\n    # python dict\n    serializer = CourseSerializer(course, many=True)\n    # render Json\n    json_data = JSONRenderer().render(serializer.data)\n    # json sent to User\n    return HttpResponse(json_data, content_type=\"application/json\")\n# Model instance",
-        "detail": "resttest.views",
-        "documentation": {}
-    },
-    {
-        "label": "single_course_info",
-        "kind": 2,
-        "importPath": "resttest.views",
-        "description": "resttest.views",
-        "peekOfCode": "def single_course_info(request, pk):\n    # complex data\n    course = Course.objects.get(id=pk)\n    # python dict\n    serializer = CourseSerializer(course)\n    # render Json\n    json_data = JSONRenderer().render(serializer.data)\n    # json sent to User\n    return HttpResponse(json_data, content_type=\"application/json\")\n@csrf_exempt",
+        "peekOfCode": "def course_info(request, id=None):\n    if id is not None:\n        course = get_object_or_404(Course, id=id)\n        serializer = CourseSerializer(course)\n        return Response(serializer.data)\n    else:\n        courses = Course.objects.all()\n        serializer = CourseSerializer(courses, many=True)\n        return Response(serializer.data)\n@api_view(['POST'])",
         "detail": "resttest.views",
         "documentation": {}
     },
@@ -547,8 +1564,242 @@
         "kind": 2,
         "importPath": "resttest.views",
         "description": "resttest.views",
-        "peekOfCode": "def create_course(request):\n    if request.method == 'POST':\n        json_data = request.body\n        # json to stream\n        stream = io.BytesIO(json_data)\n        # stream to python\n        pythondata = JSONParser().parse(stream)\n        # python to complex\n        serializer = CourseSerializer(data=pythondata)\n        if serializer.is_valid():",
+        "peekOfCode": "def create_course(request, id=None):\n    serializer = CourseSerializer(data=request.data)\n    serializer.save()\n    response_message = {'msg': 'Successfully insert'}\n    return Response(serializer.errors)\n@api_view(['PUT', 'PATCH'])\ndef update_course(request, pk=None):\n    try:\n        # Attempt to get the course by primary key\n        course = Course.objects.get(pk=pk)",
         "detail": "resttest.views",
+        "documentation": {}
+    },
+    {
+        "label": "update_course",
+        "kind": 2,
+        "importPath": "resttest.views",
+        "description": "resttest.views",
+        "peekOfCode": "def update_course(request, pk=None):\n    try:\n        # Attempt to get the course by primary key\n        course = Course.objects.get(pk=pk)\n    except Course.DoesNotExist:\n        # Return a 404 response if the course is not found\n        return Response({'error': 'Course not found'}, status=status.HTTP_404_NOT_FOUND)\n    # Determine if this is a partial update (PATCH) or full update (PUT)\n    partial = request.method == 'PATCH'\n    # Initialize the serializer with the course instance and the incoming data",
+        "detail": "resttest.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_course",
+        "kind": 2,
+        "importPath": "resttest.views",
+        "description": "resttest.views",
+        "peekOfCode": "def delete_course(request, pk=None):\n    try:\n        # Attempt to get the course by primary key\n        course = Course.objects.get(pk=pk)\n        course.delete()\n        return Response({'msg': 'Successfully deleted'}, status=status.HTTP_200_OK)\n    except Course.DoesNotExist:\n        # Return a 404 response if the course is not found\n        return Response({'error': 'Course not found'}, status=status.HTTP_404_NOT_FOUND)",
+        "detail": "resttest.views",
+        "documentation": {}
+    },
+    {
+        "label": "course_info",
+        "kind": 2,
+        "importPath": "resttest.views2",
+        "description": "resttest.views2",
+        "peekOfCode": "def course_info(request):\n    # complex data\n    course = Course.objects.all()\n    # python dict\n    serializer = CourseSerializer(course, many=True)\n    # render Json\n    json_data = JSONRenderer().render(serializer.data)\n    # json sent to User\n    return HttpResponse(json_data, content_type=\"application/json\")\n# Model instance",
+        "detail": "resttest.views2",
+        "documentation": {}
+    },
+    {
+        "label": "single_course_info",
+        "kind": 2,
+        "importPath": "resttest.views2",
+        "description": "resttest.views2",
+        "peekOfCode": "def single_course_info(request, pk):\n    # complex data\n    course = Course.objects.get(id=pk)\n    # python dict\n    serializer = CourseSerializer(course)\n    # render Json\n    json_data = JSONRenderer().render(serializer.data)\n    # json sent to User\n    return HttpResponse(json_data, content_type=\"application/json\")\n@csrf_exempt",
+        "detail": "resttest.views2",
+        "documentation": {}
+    },
+    {
+        "label": "create_course",
+        "kind": 2,
+        "importPath": "resttest.views2",
+        "description": "resttest.views2",
+        "peekOfCode": "def create_course(request):\n    if request.method == 'POST':\n        json_data = request.body\n        # json to stream\n        stream = io.BytesIO(json_data)\n        # stream to python\n        python_data = JSONParser().parse(stream)\n        # python to complex\n        serializer = CourseSerializer(data=python_data)\n        if serializer.is_valid():",
+        "detail": "resttest.views2",
+        "documentation": {}
+    },
+    {
+        "label": "delete_course",
+        "kind": 2,
+        "importPath": "resttest.views2",
+        "description": "resttest.views2",
+        "peekOfCode": "def delete_course(request):\n    if request.method == 'DELETE':\n        json_data = request.body\n        stream = io.BytesIO(json_data)\n        python_data = JSONParser().parse(stream)\n        course_id = python_data.get('id')\n        get_data = Course.objects.get(id=id)\n        get_data.delete()\n        response_message = {'msg': 'Successfully Updated.'}\n        return JsonResponse(response_message)",
+        "detail": "resttest.views2",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "simplejwt.migrations.0001_initial",
+        "description": "simplejwt.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Constractor',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=70)),",
+        "detail": "simplejwt.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "simplejwt.migrations.0002_alter_student_managers",
+        "description": "simplejwt.migrations.0002_alter_student_managers",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('simplejwt', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterModelManagers(\n            name='student',\n            managers=[\n                ('students', django.db.models.manager.Manager()),\n            ],",
+        "detail": "simplejwt.migrations.0002_alter_student_managers",
+        "documentation": {}
+    },
+    {
+        "label": "StudentAdmin",
+        "kind": 6,
+        "importPath": "simplejwt.admin",
+        "description": "simplejwt.admin",
+        "peekOfCode": "class StudentAdmin(admin.ModelAdmin):\n    list_display = ['id', 'name', 'age', 'fees']",
+        "detail": "simplejwt.admin",
+        "documentation": {}
+    },
+    {
+        "label": "SimplejwtConfig",
+        "kind": 6,
+        "importPath": "simplejwt.apps",
+        "description": "simplejwt.apps",
+        "peekOfCode": "class SimplejwtConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'simplejwt'",
+        "detail": "simplejwt.apps",
+        "documentation": {}
+    },
+    {
+        "label": "CustomManager",
+        "kind": 6,
+        "importPath": "simplejwt.managers",
+        "description": "simplejwt.managers",
+        "peekOfCode": "class CustomManager(models.Manager):\n    def get_queryset(self):\n        return super().get_queryset().order_by('name')",
+        "detail": "simplejwt.managers",
+        "documentation": {}
+    },
+    {
+        "label": "CommonInfo",
+        "kind": 6,
+        "importPath": "simplejwt.models",
+        "description": "simplejwt.models",
+        "peekOfCode": "class CommonInfo(models.Model):\n    name = models.CharField(max_length=70)\n    age = models.IntegerField()\n    date = models.DateField()\n    class Meta:\n        abstract = True\nclass Student(CommonInfo):\n    fees = models.IntegerField()\n    data = None\n    # students = models.Manager()",
+        "detail": "simplejwt.models",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "simplejwt.models",
+        "description": "simplejwt.models",
+        "peekOfCode": "class Student(CommonInfo):\n    fees = models.IntegerField()\n    data = None\n    # students = models.Manager()\n    students = CustomManager()\nclass Teacher(CommonInfo):\n    salary = models.IntegerField()\nclass Constractor(CommonInfo):\n    data = models.DateTimeField()\n    salary = models.IntegerField()",
+        "detail": "simplejwt.models",
+        "documentation": {}
+    },
+    {
+        "label": "Teacher",
+        "kind": 6,
+        "importPath": "simplejwt.models",
+        "description": "simplejwt.models",
+        "peekOfCode": "class Teacher(CommonInfo):\n    salary = models.IntegerField()\nclass Constractor(CommonInfo):\n    data = models.DateTimeField()\n    salary = models.IntegerField()",
+        "detail": "simplejwt.models",
+        "documentation": {}
+    },
+    {
+        "label": "Constractor",
+        "kind": 6,
+        "importPath": "simplejwt.models",
+        "description": "simplejwt.models",
+        "peekOfCode": "class Constractor(CommonInfo):\n    data = models.DateTimeField()\n    salary = models.IntegerField()",
+        "detail": "simplejwt.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "simplejwt.urls",
+        "description": "simplejwt.urls",
+        "peekOfCode": "urlpatterns = [\n    path('gettotken/', TokenObtainPairView.as_view(), name='gettotken'),\n    path('refreshtoken', TokenRefreshView.as_view(), name='refreshtoken'),\n    path('tokenverify/', TokenVerifyView.as_view(), name='tokenverify'),\n]",
+        "detail": "simplejwt.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "simplejwt.views",
+        "description": "simplejwt.views",
+        "peekOfCode": "def home(request):\n    student_data = Student.students.all()\n    return render(request, 'school/home.ht  ml')\n# Create your views here.",
+        "detail": "simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "StudentsConfig",
+        "kind": 6,
+        "importPath": "students.apps",
+        "description": "students.apps",
+        "peekOfCode": "class StudentsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'students'",
+        "detail": "students.apps",
+        "documentation": {}
+    },
+    {
+        "label": "StudentForm",
+        "kind": 6,
+        "importPath": "students.forms",
+        "description": "students.forms",
+        "peekOfCode": "class StudentForm(forms.ModelForm):\n    class Meta:\n        model = Student\n        fields = ['student_number', 'first_name', 'last_name', 'email', 'field_of_study', 'gpa']\n        labels = {\n            'student_number': 'Student Number',\n            'first_name': 'First Name',\n            'last_name': 'Last Name',\n            'email': 'Email',\n            'field_of_study': 'Field of Study',",
+        "detail": "students.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "students.models",
+        "description": "students.models",
+        "peekOfCode": "class Student(models.Model):\n    student_number = models.PositiveIntegerField()\n    first_name = models.CharField(max_length=50)\n    last_name = models.CharField(max_length=50)\n    email = models.EmailField(max_length=100)\n    field_of_study = models.CharField(max_length=50)\n    gpa = models.FloatField()\n    def __str__(self):\n        return f'Student: {self.first_name} {self.last_name} {self.email}'",
+        "detail": "students.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "students.urls",
+        "description": "students.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.index, name='index'),\n    path('<int:id>', views.view_student, name='view_student'),\n    path('add/', views.add, name='add'),\n    path('edit/<int:id>/', views.edit, name='edit'),\n    path('delete/<int:id>/', views.delete, name='delete')\n]",
+        "detail": "students.urls",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "students.views",
+        "description": "students.views",
+        "peekOfCode": "def index(request):\n    return render(request, \"students/index.html\", {\"students\": Student.objects.all()})\ndef view_student(request, id):\n    return HttpResponseRedirect(reverse(\"index\"))\ndef add(request):\n    if request.method == \"POST\":\n        form = StudentForm(request.POST)\n        if form.is_valid():\n            new_student_number = form.cleaned_data[\"student_number\"]\n            new_first_name = form.cleaned_data[\"first_name\"]",
+        "detail": "students.views",
+        "documentation": {}
+    },
+    {
+        "label": "view_student",
+        "kind": 2,
+        "importPath": "students.views",
+        "description": "students.views",
+        "peekOfCode": "def view_student(request, id):\n    return HttpResponseRedirect(reverse(\"index\"))\ndef add(request):\n    if request.method == \"POST\":\n        form = StudentForm(request.POST)\n        if form.is_valid():\n            new_student_number = form.cleaned_data[\"student_number\"]\n            new_first_name = form.cleaned_data[\"first_name\"]\n            new_last_name = form.cleaned_data[\"last_name\"]\n            new_email = form.cleaned_data[\"email\"]",
+        "detail": "students.views",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "kind": 2,
+        "importPath": "students.views",
+        "description": "students.views",
+        "peekOfCode": "def add(request):\n    if request.method == \"POST\":\n        form = StudentForm(request.POST)\n        if form.is_valid():\n            new_student_number = form.cleaned_data[\"student_number\"]\n            new_first_name = form.cleaned_data[\"first_name\"]\n            new_last_name = form.cleaned_data[\"last_name\"]\n            new_email = form.cleaned_data[\"email\"]\n            new_field_of_study = form.cleaned_data[\"field_of_study\"]\n            new_gpa = form.cleaned_data[\"gpa\"]",
+        "detail": "students.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit",
+        "kind": 2,
+        "importPath": "students.views",
+        "description": "students.views",
+        "peekOfCode": "def edit(request, id):\n    if request.method == \"POST\":\n        student = Student.objects.get(pk=id)\n        form = StudentForm(request.POST, instance=student)\n        if form.is_valid():\n            form.save()\n            return render(\n                request, \"students/edit.html\", {\"form\": form, \"success\": True}\n            )\n    else:",
+        "detail": "students.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete",
+        "kind": 2,
+        "importPath": "students.views",
+        "description": "students.views",
+        "peekOfCode": "def delete(request, id):\n    if request.method == 'POST':\n        student = Student.objects.get(pk=id)\n        student.delete()\n    return HttpResponseRedirect(reverse('index'))",
+        "detail": "students.views",
         "documentation": {}
     },
     {
@@ -556,8 +1807,53 @@
         "kind": 6,
         "importPath": "users.migrations.0001_initial",
         "description": "users.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Course',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('teacher_name', models.CharField(max_length=50)),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Message',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "users.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0002_alter_message_file_alter_message_img_and_more",
+        "description": "users.migrations.0002_alter_message_file_alter_message_img_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='message',\n            name='file',\n            field=models.FileField(blank=True, null=True, upload_to='chat_files/'),\n        ),",
+        "detail": "users.migrations.0002_alter_message_file_alter_message_img_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0003_group",
+        "description": "users.migrations.0003_group",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0002_alter_message_file_alter_message_img_and_more'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Group',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "users.migrations.0003_group",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "users.migrations.0004_alter_message_user",
+        "description": "users.migrations.0004_alter_message_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0003_group'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='message',\n            name='user',\n            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
+        "detail": "users.migrations.0004_alter_message_user",
+        "documentation": {}
+    },
+    {
+        "label": "MessageAdmin",
+        "kind": 6,
+        "importPath": "users.admin",
+        "description": "users.admin",
+        "peekOfCode": "class MessageAdmin(admin.ModelAdmin):\n    list_display = ['user', 'message', 'img', 'file']\n@admin.register(Group)\nclass GroupAdmin(admin.ModelAdmin):\n    list_display = ['user', 'group_name', 'group_img']",
+        "detail": "users.admin",
+        "documentation": {}
+    },
+    {
+        "label": "GroupAdmin",
+        "kind": 6,
+        "importPath": "users.admin",
+        "description": "users.admin",
+        "peekOfCode": "class GroupAdmin(admin.ModelAdmin):\n    list_display = ['user', 'group_name', 'group_img']",
+        "detail": "users.admin",
         "documentation": {}
     },
     {
@@ -570,16 +1866,345 @@
         "documentation": {}
     },
     {
-        "label": {
-            "name": "",
-            "kind": 6,
-            "peekOfCode": "class  Course(models.Model):\n  teacher_name = models.CharField(max_length=50)\n  student_name = models.CharField(max_length=50)\n  course_duration = models.IntegerField()\n  seat = models.IntegerField()\n  def __str__(self):\n    return f'Course: {self.teacher_name} {self.student_name} {self.seat}'"
-        },
+        "label": "CustomAuthToken",
+        "kind": 6,
+        "importPath": "users.auth",
+        "description": "users.auth",
+        "peekOfCode": "class CustomAuthToken(ObtainAuthToken):\n    def post(self, request, *args, **kwargs):\n        serializer = self.serializer_class(data=request.data, context={'request': request})\n        serializer.is_valid(raise_exception=True)\n        user = serializer.validated_data['user']\n        token, created = Token.objects.get_or_create(user=user)\n        return Response({\n            'token': token.key,\n            'user_id': user.pk,\n            'email': user.email",
+        "detail": "users.auth",
+        "documentation": {}
+    },
+    {
+        "label": "MessageList",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class MessageList(ListAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass CreateMessage(CreateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass ListCreateMessage(ListCreateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveMessage(RetrieveAPIView):",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "CreateMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class CreateMessage(CreateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass ListCreateMessage(ListCreateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveMessage(RetrieveAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass UpdateMessage(UpdateAPIView):",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "ListCreateMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class ListCreateMessage(ListCreateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveMessage(RetrieveAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass UpdateMessage(UpdateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass DestroyMessage(DestroyAPIView):",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class RetrieveMessage(RetrieveAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass UpdateMessage(UpdateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass DestroyMessage(DestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveUpdateDestroyMessage(RetrieveUpdateDestroyAPIView):",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class UpdateMessage(UpdateAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass DestroyMessage(DestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveUpdateDestroyMessage(RetrieveUpdateDestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "DestroyMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class DestroyMessage(DestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\nclass RetrieveUpdateDestroyMessage(RetrieveUpdateDestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveUpdateDestroyMessage",
+        "kind": 6,
+        "importPath": "users.ConcreateView",
+        "description": "users.ConcreateView",
+        "peekOfCode": "class RetrieveUpdateDestroyMessage(RetrieveUpdateDestroyAPIView):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer",
+        "detail": "users.ConcreateView",
+        "documentation": {}
+    },
+    {
+        "label": "CustomAuthentication",
+        "kind": 6,
+        "importPath": "users.custom_auth",
+        "description": "users.custom_auth",
+        "peekOfCode": "class CustomAuthentication(BaseAuthentication):\n    def authenticate(self, request):\n        username = request.GET.get('username')\n        if username is None:\n            return None\n        try:\n            user = User.objects.get(username=username)\n        except User.DoesNotExist:\n            raise AuthenticationFailed('No Such User')\n        return user, None",
+        "detail": "users.custom_auth",
+        "documentation": {}
+    },
+    {
+        "label": "CustomPagination",
+        "kind": 6,
+        "importPath": "users.custom_pagintaion",
+        "description": "users.custom_pagintaion",
+        "peekOfCode": "class CustomPagination(LimitOffsetPagination):\n    default_limit = 25\n    limit_query_param = 'page'\n    # page_size = 25\n    # page_size_query_param = 'records'\n    # max_page_size = 10\n    # last_page_strings = 'end'\n    # Override query 'page=4' to 'p=4'\n    # page_query_param = 'p'",
+        "detail": "users.custom_pagintaion",
+        "documentation": {}
+    },
+    {
+        "label": "MyPermission",
+        "kind": 6,
+        "importPath": "users.custom_permission",
+        "description": "users.custom_permission",
+        "peekOfCode": "class MyPermission(BasePermission):\n    def has_permission(self, request, view):\n        if request.method == 'POST':\n            return True\n        else:\n            return False",
+        "detail": "users.custom_permission",
+        "documentation": {}
+    },
+    {
+        "label": "MessageForm",
+        "kind": 6,
+        "importPath": "users.forms",
+        "description": "users.forms",
+        "peekOfCode": "class MessageForm(forms.ModelForm):\n    class Meta:\n        model = Message\n        fields = '__all__' \n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields['img'].required = False\n        self.fields['file'].required = False",
+        "detail": "users.forms",
+        "documentation": {}
+    },
+    {
+        "label": "MessageList",
+        "kind": 6,
+        "importPath": "users.GenericApiView",
+        "description": "users.GenericApiView",
+        "peekOfCode": "class MessageList(GenericAPIView, ListModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    pagination_class = CustomPagination\n    def get(self, request, *args, **kwargs):\n        return self.list(request, *args, **kwargs)\nclass CreateMessage(GenericAPIView, CreateModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def post(self, request, *args, **kwargs):",
+        "detail": "users.GenericApiView",
+        "documentation": {}
+    },
+    {
+        "label": "CreateMessage",
+        "kind": 6,
+        "importPath": "users.GenericApiView",
+        "description": "users.GenericApiView",
+        "peekOfCode": "class CreateMessage(GenericAPIView, CreateModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def post(self, request, *args, **kwargs):\n        return self.create(request, *args, **kwargs)\nclass RetrieveMessage(GenericAPIView, RetrieveModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def get(self, request, *args, **kwargs):\n        return self.retrieve(request, *args, **kwargs)",
+        "detail": "users.GenericApiView",
+        "documentation": {}
+    },
+    {
+        "label": "RetrieveMessage",
+        "kind": 6,
+        "importPath": "users.GenericApiView",
+        "description": "users.GenericApiView",
+        "peekOfCode": "class RetrieveMessage(GenericAPIView, RetrieveModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def get(self, request, *args, **kwargs):\n        return self.retrieve(request, *args, **kwargs)\nclass UpdateMessage(GenericAPIView, RetrieveModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def put(self, request, *args, **kwargs):\n        return self.update(request, *args, **kwargs)",
+        "detail": "users.GenericApiView",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateMessage",
+        "kind": 6,
+        "importPath": "users.GenericApiView",
+        "description": "users.GenericApiView",
+        "peekOfCode": "class UpdateMessage(GenericAPIView, RetrieveModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def put(self, request, *args, **kwargs):\n        return self.update(request, *args, **kwargs)\nclass DestroyMessage(GenericAPIView, DestroyModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def delete(self, request, *args, **kwargs):\n        return self.destroy(request, *args, **kwargs)",
+        "detail": "users.GenericApiView",
+        "documentation": {}
+    },
+    {
+        "label": "DestroyMessage",
+        "kind": 6,
+        "importPath": "users.GenericApiView",
+        "description": "users.GenericApiView",
+        "peekOfCode": "class DestroyMessage(GenericAPIView, DestroyModelMixin):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    def delete(self, request, *args, **kwargs):\n        return self.destroy(request, *args, **kwargs)",
+        "detail": "users.GenericApiView",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
         "kind": 6,
         "importPath": "users.models",
         "description": "users.models",
-        "peekOfCode": "class  Course(models.Model):\n  teacher_name = models.CharField(max_length=50)\n  student_name = models.CharField(max_length=50)\n  course_duration = models.IntegerField()\n  seat = models.IntegerField()\n  def __str__(self):\n    return f'Course: {self.teacher_name} {self.student_name} {self.seat}'",
+        "peekOfCode": "class Message(models.Model):\n    DoesNotExist = None\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    message = models.CharField(max_length=2000, null=True, blank=True)\n    img = models.ImageField(upload_to='chat_images/', null=True, blank=True)\n    file = models.FileField(upload_to='chat_files/', null=True, blank=True)\n    def __str__(self):\n        return self.user\nclass Group(models.Model):\n    user = models.ForeignKey(User, on_delete=models.PROTECT, limit_choices_to={'is_staff': True})",
         "detail": "users.models",
+        "documentation": {}
+    },
+    {
+        "label": "Group",
+        "kind": 6,
+        "importPath": "users.models",
+        "description": "users.models",
+        "peekOfCode": "class Group(models.Model):\n    user = models.ForeignKey(User, on_delete=models.PROTECT, limit_choices_to={'is_staff': True})\n    group_name = models.CharField(max_length=150, )\n    group_img = models.ImageField(upload_to='group_profile_images/')\n    def __str__(self):\n        return self.group_name",
+        "detail": "users.models",
+        "documentation": {}
+    },
+    {
+        "label": "create_auth_token",
+        "kind": 2,
+        "importPath": "users.models",
+        "description": "users.models",
+        "peekOfCode": "def create_auth_token(sender, instance=None, created=False, **kwargs):\n    if created:\n        Token.objects.create(user=instance)\nclass Message(models.Model):\n    DoesNotExist = None\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    message = models.CharField(max_length=2000, null=True, blank=True)\n    img = models.ImageField(upload_to='chat_images/', null=True, blank=True)\n    file = models.FileField(upload_to='chat_files/', null=True, blank=True)\n    def __str__(self):",
+        "detail": "users.models",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelViewSet",
+        "kind": 6,
+        "importPath": "users.ModelViewSet",
+        "description": "users.ModelViewSet",
+        "peekOfCode": "class MessageModelViewSet(viewsets.ModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    authentication_classes = [SessionAuthentication]\n    permission_classes = [IsAuthenticatedOrReadOnly]\n    throttle_classes = [AnonRateThrottle, AbdullahRateThrottle]\nclass MessageReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n# Ignoring global authentication",
+        "detail": "users.ModelViewSet",
+        "documentation": {}
+    },
+    {
+        "label": "MessageReadOnlyModelViewSet",
+        "kind": 6,
+        "importPath": "users.ModelViewSet",
+        "description": "users.ModelViewSet",
+        "peekOfCode": "class MessageReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n# Ignoring global authentication\nclass MessageModelViewSetForALL(viewsets.ModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    authentication_classes = [BasicAuthentication]\n    permission_classes = [AllowAny]",
+        "detail": "users.ModelViewSet",
+        "documentation": {}
+    },
+    {
+        "label": "MessageModelViewSetForALL",
+        "kind": 6,
+        "importPath": "users.ModelViewSet",
+        "description": "users.ModelViewSet",
+        "peekOfCode": "class MessageModelViewSetForALL(viewsets.ModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer\n    authentication_classes = [BasicAuthentication]\n    permission_classes = [AllowAny]",
+        "detail": "users.ModelViewSet",
+        "documentation": {}
+    },
+    {
+        "label": "MessageSerializer",
+        "kind": 6,
+        "importPath": "users.serializers",
+        "description": "users.serializers",
+        "peekOfCode": "class MessageSerializer(serializers.ModelSerializer):\n    user = serializers.StringRelatedField(read_only=True)\n    class Meta:\n        model = Message\n        fields = '__all__'\n        read_only_fields = ['id', 'user']\n    # def create(self, validated_data):\n    #     return Message.objects.create(**validated_data)\n    # def update(self, instance, validated_data):\n    #     instance.message = validated_data.get('message', instance.message)",
+        "detail": "users.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "GroupSerializer",
+        "kind": 6,
+        "importPath": "users.serializers",
+        "description": "users.serializers",
+        "peekOfCode": "class GroupSerializer(serializers.ModelSerializer):\n    user = serializers.StringRelatedField()  # Use StringRelatedField for user\n    group_name = serializers.CharField(max_length=150, allow_blank=False)  # Set allow_blank=False\n    group_img = serializers.ImageField()\n    class Meta:\n        model = Group\n        fields = '__all__'",
+        "detail": "users.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "AbdullahRateThrottle",
+        "kind": 6,
+        "importPath": "users.throttling",
+        "description": "users.throttling",
+        "peekOfCode": "class AbdullahRateThrottle(UserRateThrottle):\n    scope = 'abdullah'",
+        "detail": "users.throttling",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "users.urls",
+        "description": "users.urls",
+        "peekOfCode": "urlpatterns = [\n    path('all/', GenericApiView.MessageList.as_view()),\n    path('post/', GenericApiView.CreateMessage.as_view()),\n    path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),\n    path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),\n    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())\n]\n# urlpatterns = [\n#     path('set-session/', views.set_session, name='set-session'),\n#     path('get-session/', views.get_session, name='get-session'),",
+        "detail": "users.urls",
+        "documentation": {}
+    },
+    {
+        "label": "MessagePost",
+        "kind": 6,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "class MessagePost(APIView):\n    def post(self, request, format=None):\n        serializer = MessageSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response({'msg': 'Data Created'}, status=status.HTTP_201_CREATED)\n        else:\n            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n# @csrf_exempt\n# def message_edit(request):",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "message_list",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def message_list(request):\n    stu = Message.objects.all()\n    serializer = MessageSerializer(stu, many=True)\n    json_data = JSONRenderer().render(serializer.data)\n    return HttpResponse(json_data, content_type='application/json')\ndef message(request, pk):\n    stu = Message.objects.get(id=pk)\n    serializer = MessageSerializer(stu)\n    json_data = JSONRenderer().render(serializer.data)\n    return HttpResponse(json_data, content_type='application/json')",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def message(request, pk):\n    stu = Message.objects.get(id=pk)\n    serializer = MessageSerializer(stu)\n    json_data = JSONRenderer().render(serializer.data)\n    return HttpResponse(json_data, content_type='application/json')\n@csrf_exempt\n@authentication_classes([BasicAuthentication])\n@permission_classes([IsAuthenticated])\ndef message_post(request):\n    if request.method == 'POST':",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "message_post",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def message_post(request):\n    if request.method == 'POST':\n        json_data = request.body\n        stream = io.BytesIO(json_data)\n        python_data = JSONParser().parse(stream)\n        serializer = MessageSerializer(data=python_data)\n        if serializer.is_valid():\n            serializer.save()\n            res = {'msg': 'Data Created'}\n            return JsonResponse(res, status=201)",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_message",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def edit_message(request, pk=None):\n    try:\n        message = Message.objects.get(pk=pk)\n    except Message.DoesNotExist:\n        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)\n    partial = request.method == 'PATCH'\n    serializer = MessageSerializer(message, data=request.data, partial=partial)\n    if serializer.is_valid():\n        serializer.save()\n        return Response({'msg': 'Successfully updated'}, status=status.HTTP_200_OK)",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_message",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def delete_message(request, pk=None):\n    try:\n        message = Message.objects.get(pk=pk)\n        message.delete()\n        return Response({'msg': 'Message Successfully deleted'}, status=status.HTTP_200_OK)\n    except Message.DoesNotExist:\n        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)\n# class MessageListCreateView(generics.ListCreateAPIView):\n#     queryset = Message.objects.all()\n#     serializer_class = MessageSerializer",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "set_session",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def set_session(request):\n    request.session['name'] = 'Hadi'\n    return JsonResponse({'message': 'Session set'})\ndef get_session(request):\n    value = request.session.get('name', default='Session key not set')\n    return JsonResponse({'name': value})",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_session",
+        "kind": 2,
+        "importPath": "users.views",
+        "description": "users.views",
+        "peekOfCode": "def get_session(request):\n    value = request.session.get('name', default='Session key not set')\n    return JsonResponse({'name': value})",
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "MessageViewSet",
+        "kind": 6,
+        "importPath": "users.ViewSet",
+        "description": "users.ViewSet",
+        "peekOfCode": "class MessageViewSet(viewsets.ViewSet):\n    def list(self, request):\n        message = Message.objects.all()\n        serializer = MessageSerializer(message, many=True)\n        return Response(serializer.data)\n    def retrive(self, request, pk=None):\n        id = pk\n        if id is not None:\n            message = Message.objects.get(id=id)\n            serializer = MessageSerializer(message)",
+        "detail": "users.ViewSet",
+        "documentation": {}
+    },
+    {
+        "label": "compute_key",
+        "kind": 2,
+        "importPath": "hash",
+        "description": "hash",
+        "peekOfCode": "def compute_key(secret: str) -> str:\n    pepper = sha256(b\"GitGuardian\").digest()\n    return (\n        Scrypt(salt=pepper, n=2048, r=8, p=1, length=32)\n        .derive(secret.encode(\"utf-8\"))\n        .hex()\n    )\nsecret = getpass(\"Please paste your secret here: \")\nprint(\"Your hash is: \")\nprint(compute_key(secret))",
+        "detail": "hash",
+        "documentation": {}
+    },
+    {
+        "label": "secret",
+        "kind": 5,
+        "importPath": "hash",
+        "description": "hash",
+        "peekOfCode": "secret = getpass(\"Please paste your secret here: \")\nprint(\"Your hash is: \")\nprint(compute_key(secret))",
+        "detail": "hash",
         "documentation": {}
     },
     {

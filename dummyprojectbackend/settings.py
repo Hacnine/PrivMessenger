@@ -2,6 +2,7 @@ from pathlib import Path
 
 import django_filters.rest_framework
 import rest_framework.pagination
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.stati cfiles',
     'rest_framework',
     'corsheaders',
     'django_filters',
@@ -103,10 +104,10 @@ USE_TZ = True
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Adjust this to match the origin of your React app
+    "http://localhost:3000",  # Adjust this to match the origin of your React app
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:3000",
 ]
 # Optional: Allow all headers and methods for simplicity
 CORS_ALLOW_ALL_ORIGINS = True
@@ -115,6 +116,26 @@ CORS_ALLOW_CREDENTIALS = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH_USER_MODEL = 'users.User'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
+
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+    'TOKEN_USER_CLASS': 'rest_frame work_simplejwt.models.TokenUser',
+
+    'JTI_CLAIM': 'jti',
+
+}
 
 '''Global-AUTHENTICATION Settings for Rest Framework - ALl view'''
 # REST_FRAMEWORK = {
@@ -140,6 +161,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #
 'Global Pagination in Rest framework'
 REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
 }

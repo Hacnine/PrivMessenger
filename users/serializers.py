@@ -16,7 +16,7 @@ from .models import *
 #         return Message.objects.create(**validated_data)
 
 class MessageSerializer(serializers.ModelSerializer):
-    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    user = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = Message
