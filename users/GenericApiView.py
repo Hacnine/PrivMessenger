@@ -1,47 +1,51 @@
+from rest_framework.renderers import JSONRenderer
+
 from .custom_pagintaion import CustomPagination
 from .models import *
 from .serializers import *
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
+from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, RetrieveAPIView, UpdateAPIView
+
+from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, \
+    DestroyModelMixin
 from rest_framework.filters import SearchFilter
+from account.renderers import UserRenderer
+from rest_framework.permissions import IsAuthenticated
 
 
-class MessageList(GenericAPIView, ListModelMixin):
+class CreateMessage(CreateAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [JSONRenderer]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class MessageList(ListAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
     pagination_class = CustomPagination
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [JSONRenderer]
 
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
 
-
-class CreateMessage(GenericAPIView, CreateModelMixin):
+class RetrieveMessage(RetrieveAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [JSONRenderer]
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
 
-
-class RetrieveMessage(GenericAPIView, RetrieveModelMixin):
+class UpdateMessage(UpdateAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [JSONRenderer]
 
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
 
-
-class UpdateMessage(GenericAPIView, RetrieveModelMixin):
+class DestroyMessage(DestroyAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-
-class DestroyMessage(GenericAPIView, DestroyModelMixin):
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer
-
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [JSONRenderer]

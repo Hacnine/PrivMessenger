@@ -10,21 +10,30 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Group',
+            name='User',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('group_name', models.CharField(max_length=150)),
-                ('group_img', models.ImageField(upload_to='group_profile_images/')),
-                ('user', models.ForeignKey(limit_choices_to={'is_staff': True}, on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL)),
+                ('password', models.CharField(max_length=128, verbose_name='password')),
+                ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
+                ('email', models.EmailField(max_length=255, unique=True, verbose_name='Email')),
+                ('name', models.CharField(max_length=200)),
+                ('tc', models.BooleanField(default=True)),
+                ('is_active', models.BooleanField(default=True)),
+                ('is_admin', models.BooleanField(default=False)),
+                ('is_staff', models.BooleanField(default=False)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(auto_now=True)),
             ],
+            options={
+                'abstract': False,
+            },
         ),
         migrations.CreateModel(
-            name='Message',
+            name='UserMessage',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('message', models.CharField(blank=True, max_length=2000, null=True)),

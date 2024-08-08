@@ -1,42 +1,35 @@
 from rest_framework import serializers
-from .models import *
+from .models import Message, Group
+from account.models import User
 
 
-# class MessageSerializer(serializers.Serializer):
-#     user = serializers.StringRelatedField()  # Use StringRelatedField for user
-#     message = models.CharField(max_length=2000,  null=True, blank=True)
-#     img = models.ImageField(null=True, blank=True)
-#     file = models.FileField(null=True, blank=True)
-#
-#     def to_representation(self, instance):
-#         data = super().to_representation(instance)
-#         return data
-#
-#     def create(self, validated_data):
-#         return Message.objects.create(**validated_data)
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'email']
+
 
 class MessageSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField(read_only=True)
+    user_details = UserSerializer(source='user', read_only=True)
+    user = serializers.CharField(write_only=True)
 
     class Meta:
         model = Message
-        fields = '__all__'
-        read_only_fields = ['id', 'user']
- 
-    # def create(self, validated_data):
-    #     return Message.objects.create(**validated_data)
+        fields = ['user_details', 'user', 'message', 'img', 'file', 'created_at', 'updated_at']
 
-    # def update(self, instance, validated_data):
-    #     instance.message = validated_data.get('message', instance.message)
-    #
-    #     if 'img' in validated_data:
-    #         instance.img = validated_data['img']
-    #
-    #     if 'file' in validated_data:
-    #         instance.file = validated_data['file']
-    #
-    #     instance.save()
-    #     return instance
+    def create(self, validated_data):
+        user_identifier = validated_data.pop('user')
+        try:
+            # Try to get the user by email or username
+            user = User.objects.get(email=user_identifier)
+        except User.DoesNotExist:
+            try:
+                user = User.objects.get(username=user_identifier)
+            except User.DoesNotExist:
+                raise serializers.ValidationError("User not found")
+
+        validated_data['user'] = user
+        return super().create(validated_data)
 
 
 class GroupSerializer(serializers.ModelSerializer):

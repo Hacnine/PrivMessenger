@@ -4,6 +4,15 @@ from . import views, GenericApiView, ConcreateView, ViewSet, ModelViewSet
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
+urlpatterns = [
+    path('post/', GenericApiView.CreateMessage.as_view()),
+    path('all/', GenericApiView.MessageList.as_view()),
+    path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
+    path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
+    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
+]
+
+
 ''' For ModelView Set '''
 # # Creating Router Objects
 # router = DefaultRouter()

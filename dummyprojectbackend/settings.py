@@ -1,7 +1,6 @@
 from pathlib import Path
-
-import django_filters.rest_framework
-import rest_framework.pagination
+from datetime import timedelta
+import os
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +19,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.stati cfiles',
+    'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'django_filters',
     'rest_framework.authtoken',
     'users',
+    'account'
 
 ]
 
@@ -102,9 +101,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+PASSWORD_RESET_TIMEOUT = 900  # 900 Sec = 15 Min
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Adjust this to match the origin of your React app
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -117,7 +118,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'account.User'
+
+# Email Configuration
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_USE_TLS = True
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
