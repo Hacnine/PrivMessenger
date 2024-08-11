@@ -91,45 +91,6 @@ class SendPasswordResetEmailSerializer(serializers.Serializer):
             raise ValueError('You are not registered user.')
 
 
-class UserMessageSerializer(serializers.ModelSerializer):
-    user = serializers.CharField(write_only=True)
-
-    class Meta:
-        model = UserMessage
-        fields = ['user', 'message', 'img', 'file', 'created_at', 'updated_at']
-
-    def create(self, validated_data):
-        user_identifier = validated_data.pop('user')
-        try:
-            # Try to get the user by email or username
-            user = User.objects.get(email=user_identifier)
-        except User.DoesNotExist:
-            try:
-                user = User.objects.get(username=user_identifier)
-            except User.DoesNotExist:
-                raise serializers.ValidationError("User not found")
-
-        validated_data['user'] = user
-        return super().create(validated_data)
-
-
-# class UserMessageSerializer(serializers.ModelSerializer):
-#     user = serializers.StringRelatedField()
-#
-#     class Meta:
-#         model = UserMessage
-#         fields = ['user', 'message', 'img', 'file', 'created_at', 'updated_at']
-#
-#     def create(self, validated_data):
-#         user_id = validated_data.pop('user')
-#         try:
-#             user = User.objects.get(id=user_id)
-#         except User.DoesNotExist:
-#             raise serializers.ValidationError("User not found")
-#         message = UserMessage.objects.create(user=user, **validated_data)
-#         return message
-
-
 class UserPasswordResetSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=255, style={'input_type': 'password'}, write_only=True)
     password2 = serializers.CharField(max_length=255, style={'input_type': 'password'}, write_only=True)

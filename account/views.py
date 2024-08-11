@@ -10,9 +10,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
 
-from .models import UserMessage
-from .serializers import UserMessageSerializer
-
 
 # Generate Token Manually
 def get_tokens_for_user(user):
@@ -116,11 +113,4 @@ class UserPasswordResetView(APIView):
         return Response({'msg': 'Password Reset Successfully'}, status=status.HTTP_200_OK)
 
 
-class UserMessageCreateView(generics.CreateAPIView):
-    queryset = UserMessage.objects.all()
-    serializer_class = UserMessageSerializer
-    permission_classes = [IsAuthenticated]
-    renderer_classes = [JSONRenderer]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)

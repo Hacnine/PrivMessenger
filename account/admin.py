@@ -27,8 +27,4 @@ class UserModelAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
-@admin.register(UserMessage)
-class MessageAdmin(admin.ModelAdmin):
-    list_display = ['user', 'message', 'img', 'file']
-
 admin.site.register(User, UserModelAdmin)

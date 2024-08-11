@@ -58,13 +58,3 @@ class User(AbstractBaseUser):
         return True
 
 
-class UserMessage(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    message = models.CharField(max_length=2000, null=True, blank=True)
-    img = models.ImageField(upload_to='static/chat_images/', null=True, blank=True)
-    file = models.FileField(upload_to='static/chat_files/', null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
-
-    def __str__(self):
-        return f"{self.user.email}"
