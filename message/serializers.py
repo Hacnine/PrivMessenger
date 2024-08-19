@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from .models import ChatRoom, Message, Image, File
 from account.models import User
 
 
@@ -15,36 +15,50 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = ['img']
 
 
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = ['file']
+
+
 class MessageSerializer(serializers.ModelSerializer):
-    user_details = UserSerializer(source='user', read_only=True)
-    user = serializers.CharField(write_only=True)
-    img = ImageSerializer(many=True, required=False, source='images')
+    sender_details = UserSerializer(source='sender', read_only=True)
+    images = ImageSerializer(many=True, read_only=True)
+    files = FileSerializer(many=True, read_only=True)
 
     class Meta:
         model = Message
-        fields = ['user_details', 'user', 'message', 'img', 'file', 'created_at', 'updated_at']
+        fields = ['id', 'chatroom', 'sender', 'sender_details', 'message', 'created_at', 'updated_at', 'images',
+                  'files']
 
     def create(self, validated_data):
-        user_identifier = validated_data.pop('user')
-        img_data = self.context['request'].FILES.getlist('img')  # Use request.FILES.getlist to retrieve the images
-        try:
-            user = User.objects.get(email=user_identifier)
-        except User.DoesNotExist:
-            raise serializers.ValidationError("User not found")
+        sender = validated_data.get('sender')
+        chatroom = validated_data.get('chatroom')
 
-        message = Message.objects.create(user=user, **validated_data)
+        # Check if a chat room already exists for the participants in the chatroom
+        if not chatroom:
+            receiver_id = self.context['request'].data.get('receiver_id')
+            receiver = User.objects.get(id=receiver_id)
+            chatroom = ChatRoom.objects.filter(participants=sender).filter(participants=receiver).first()
 
-        for img in img_data:
-            Image.objects.create(message=message, img=img)
+            if not chatroom:
+                # Create a new chat room
+                chatroom = ChatRoom.objects.create()
+                chatroom.participants.add(sender, receiver)
+                chatroom.save()
 
+        # Create the message
+        message = Message.objects.create(chatroom=chatroom, sender=sender, message=validated_data.get('message'))
         return message
 
 
-class GroupSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()  # Use StringRelatedField for user
-    group_name = serializers.CharField(max_length=150, allow_blank=False)  # Set allow_blank=False
-    group_img = serializers.ImageField()
+class ChatRoomSerializer(serializers.ModelSerializer):
+    participants = UserSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Group
-        fields = '__all__'
+        model = ChatRoom
+        fields = ['id', 'name', 'participants', 'created_at']
+
+    def get_chatroom_name(self, obj):
+        request_user = self.context.get('request').user
+        return obj.get_chatroom_name_for_user(request_user)

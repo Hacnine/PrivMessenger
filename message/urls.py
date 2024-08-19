@@ -9,9 +9,9 @@ urlpatterns = [
     path('all/', GenericApiView.MessageList.as_view()),
     path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
     path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
-    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
+    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view()),
+    path('get-or-create-chatroom/', GenericApiView.GetOrCreateChatRoomView.as_view()),
 ]
-
 
 ''' For ModelView Set '''
 # # Creating Router Objects
@@ -52,7 +52,6 @@ urlpatterns = [
     path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
     path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
 ]
-
 
 # urlpatterns = [
 #     path('set-session/', views.set_session, name='set-session'),

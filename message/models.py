@@ -3,29 +3,43 @@ from django.conf import settings
 from account.models import User
 
 
-class Message(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    message = models.CharField(max_length=2000, null=True, blank=True)
-    file = models.FileField(upload_to='static/chat_files/', null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
+class ChatRoom(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+    participants = models.ManyToManyField(User, related_name='chatrooms')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.email}"
+        if self.participants.count() == 2:
+            return f"Chatroom between {self.participants.all()[0].name} and {self.participants.all()[1].name}"
+        return self.name or "Group Chat"
+
+    def get_chatroom_name_for_user(self, user):
+        other_participant = self.participants.exclude(id=user.id).first()
+        return other_participant.name if other_participant else self.name
+
+
+class Message(models.Model):
+    chatroom = models.ForeignKey(ChatRoom, related_name='messages', on_delete=models.CASCADE)
+    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
+    message = models.CharField(max_length=2000, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.sender.email} to {self.chatroom}: {self.message}"
 
 
 class Image(models.Model):
     message = models.ForeignKey(Message, related_name='images', on_delete=models.CASCADE)
-    img = models.ImageField(upload_to='static/chat_images/',  null=True, blank=True)
+    img = models.ImageField(upload_to='static/chat_images/', null=True, blank=True)
 
     def __str__(self):
         return f"Image for message {self.message.id}"
 
 
-class Group(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, limit_choices_to={'is_staff': True})
-    group_name = models.CharField(max_length=150, )
-    group_img = models.ImageField(upload_to='group_profile_images/')
+class File(models.Model):
+    message = models.ForeignKey(Message, related_name='files', on_delete=models.CASCADE)
+    file = models.FileField(upload_to='static/chat_files/', null=True, blank=True)
 
     def __str__(self):
-        return self.group_name
+        return f"File for message {self.message.id}"

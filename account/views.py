@@ -1,14 +1,16 @@
+from rest_framework.generics import ListAPIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from account.serializers import SendPasswordResetEmailSerializer, UserChangePasswordSerializer, UserLoginSerializer, \
-    UserProfileSerializer, UserRegistrationSerializer, UserPasswordResetSerializer
+from account.serializers import *
+from .models import *
 from django.contrib.auth import authenticate
 from account.renderers import UserRenderer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
+from rest_framework.filters import SearchFilter
 
 
 # Generate Token Manually
@@ -19,6 +21,9 @@ def get_tokens_for_user(user):
         'refresh': str(refresh),
         'access': str(refresh.access_token),
     }
+
+
+
 
 
 class UserRegistrationView(APIView):
@@ -113,4 +118,17 @@ class UserPasswordResetView(APIView):
         return Response({'msg': 'Password Reset Successfully'}, status=status.HTTP_200_OK)
 
 
+class UserSearchView(ListAPIView):
+    serializer_class = UserSerializer
 
+    def get_queryset(self):
+        query = self.request.query_params.get('search', '')
+        return User.objects.filter(name__icontains=query) | User.objects.filter(email__icontains=query)
+
+
+# class UserSearchView(ListAPIView):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#     permission_classes = [IsAuthenticated]
+#     filter_backends = [SearchFilter]
+#     search_fields = ['name', 'email']

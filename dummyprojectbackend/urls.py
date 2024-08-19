@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/user/', include('account.urls')),  # For user-related endpoints
-    path('api/messages/', include('message.urls')),    # For message-related endpoints
-    path('auth/', include('rest_framework.urls')),  # For DRF authentication
+    path('api/user/', include('account.urls')),
+    path('api/messages/', include('message.urls')),
+    path('auth/', include('rest_framework.urls')),
 ]
 
 
