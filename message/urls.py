@@ -1,16 +1,23 @@
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
-from . import views, GenericApiView
+from . import views
+from .GenericApiView import *
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 urlpatterns = [
-    path('post/', GenericApiView.CreateMessage.as_view()),
-    path('all/', GenericApiView.MessageList.as_view()),
-    path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
-    path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
-    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view()),
-    path('get-or-create-chatroom/', GenericApiView.GetOrCreateChatRoomView.as_view()),
+    path('get-or-create-chatroom/', GetOrCreateChatRoomView.as_view()),
+    # Fetch all messages in a specific chatroom
+    path('chatroom/<int:chatroom_id>/messages/', ChatRoomMessagesView.as_view(), name='chatroom-messages'),
+
+    # Post a new message
+    path('chatroom/<int:chatroom_id>/send-message/', SendMessage.as_view(), name='send-message'),
+
+    path('post/', CreateMessage.as_view()),
+    path('all/', MessageList.as_view()),
+    path('<int:pk>/', RetrieveMessage.as_view()),
+    path('edit/<int:pk>/', UpdateMessage.as_view()),
+    path('delete/<int:pk>/', DestroyMessage.as_view()),
 ]
 
 ''' For ModelView Set '''
@@ -45,13 +52,7 @@ urlpatterns = [
 #     path('delete/<int:pk>/', ConcreateView.DestroyMessage.as_view())
 # ]
 
-urlpatterns = [
-    path('all/', GenericApiView.MessageList.as_view()),
-    path('post/', GenericApiView.CreateMessage.as_view()),
-    path('<int:pk>/', GenericApiView.RetrieveMessage.as_view()),
-    path('edit/<int:pk>/', GenericApiView.UpdateMessage.as_view()),
-    path('delete/<int:pk>/', GenericApiView.DestroyMessage.as_view())
-]
+
 
 # urlpatterns = [
 #     path('set-session/', views.set_session, name='set-session'),

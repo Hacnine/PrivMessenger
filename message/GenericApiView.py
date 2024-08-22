@@ -7,6 +7,7 @@ from rest_framework.filters import SearchFilter
 from account.renderers import UserRenderer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import status
 
 
 class GetOrCreateChatRoomView(APIView):
@@ -34,6 +35,35 @@ class GetOrCreateChatRoomView(APIView):
         return Response(serializer.data)
 
 
+class ChatRoomMessagesView(ListAPIView):
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        chatroom_id = self.kwargs['chatroom_id']
+        return Message.objects.filter(chatroom_id=chatroom_id).order_by('created_at')
+
+
+class SendMessage(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, chatroom_id=None):
+        data = request.data.copy()
+        sender = request.user
+
+        # If chatroom_id is provided in the URL, add it to the request data
+        if chatroom_id:
+            data['chatroom'] = chatroom_id
+
+        data['sender'] = sender.id  # Set the sender in the data
+
+        serializer = MessageSerializer(data=data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class CreateMessage(CreateAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
@@ -41,19 +71,7 @@ class CreateMessage(CreateAPIView):
 
     def perform_create(self, serializer):
         sender = self.request.user
-        receiver_id = self.request.data.get('receiver_id')
-        receiver = User.objects.get(id=receiver_id)
-
-        # Check if a chat room already exists between the two users
-        chatroom = ChatRoom.objects.filter(participants=sender).filter(participants=receiver).first()
-
-        if not chatroom:
-            # Create a new chat room
-            chatroom = ChatRoom.objects.create()
-            chatroom.participants.add(sender, receiver)
-            chatroom.save()
-
-        serializer.save(chatroom=chatroom, sender=sender)
+        serializer.save(sender=sender)
 
 
 class MessageList(ListAPIView):

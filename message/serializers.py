@@ -28,27 +28,24 @@ class MessageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Message
-        fields = ['id', 'chatroom', 'sender', 'sender_details', 'message', 'created_at', 'updated_at', 'images',
-                  'files']
+        fields = ['id', 'chatroom', 'sender', 'sender_details', 'message', 'created_at', 'updated_at', 'images', 'files']
 
     def create(self, validated_data):
         sender = validated_data.get('sender')
         chatroom = validated_data.get('chatroom')
+        receiver_id = self.context['request'].data.get('receiver_id')
 
-        # Check if a chat room already exists for the participants in the chatroom
-        if not chatroom:
-            receiver_id = self.context['request'].data.get('receiver_id')
+        if not chatroom and receiver_id:
             receiver = User.objects.get(id=receiver_id)
             chatroom = ChatRoom.objects.filter(participants=sender).filter(participants=receiver).first()
 
             if not chatroom:
-                # Create a new chat room
                 chatroom = ChatRoom.objects.create()
                 chatroom.participants.add(sender, receiver)
                 chatroom.save()
 
-        # Create the message
-        message = Message.objects.create(chatroom=chatroom, sender=sender, message=validated_data.get('message'))
+        validated_data['chatroom'] = chatroom  # Ensure chatroom is set in validated_data
+        message = super().create(validated_data)
         return message
 
 
