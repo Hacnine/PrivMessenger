@@ -3,7 +3,7 @@ from .models import ChatRoom, Message, Image, File
 from account.models import User
 
 
-class UserSerializer(serializers.ModelSerializer):
+class  UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'name', 'email']
@@ -31,6 +31,7 @@ class MessageSerializer(serializers.ModelSerializer):
         fields = ['id', 'chatroom', 'sender', 'sender_details', 'message', 'created_at', 'updated_at', 'images', 'files']
 
     def create(self, validated_data):
+        print("Validated Data:", validated_data)
         sender = validated_data.get('sender')
         chatroom = validated_data.get('chatroom')
         receiver_id = self.context['request'].data.get('receiver_id')

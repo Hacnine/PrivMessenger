@@ -1,121 +1,103 @@
-import io
-from rest_framework import generics
-from rest_framework.response import Response
+from .custom_pagintaion import CustomPagination
+from account.renderers import UserRenderer
+from rest_framework.filters import SearchFilter
+
 from .models import *
 from .serializers import *
-from rest_framework.parsers import JSONParser
-from rest_framework.renderers import JSONRenderer
-from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.authentication import BasicAuthentication
+from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, RetrieveAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
 
 
-@authentication_classes([BasicAuthentication])
-@permission_classes(IsAuthenticated)
-def message_list(request):
-    stu = Message.objects.all()
-    serializer = MessageSerializer(stu, many=True)
-    json_data = JSONRenderer().render(serializer.data)
-    return HttpResponse(json_data, content_type='application/json')
+class GetOrCreateChatRoomView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        user1 = request.user
+        user2_id = request.data.get('user2_id')
+
+        try:
+            user2 = User.objects.get(id=user2_id)
+        except User.DoesNotExist:
+            return Response({"error": "User not found"}, status=404)
+
+        # Check if a chatroom already exists between these two users
+        chatroom = ChatRoom.objects.filter(participants=user1).filter(participants=user2).first()
+
+        if not chatroom:
+            # If no chatroom exists, create a new one
+            chatroom = ChatRoom.objects.create()
+            chatroom.participants.add(user1, user2)
+            chatroom.save()
+
+        serializer = ChatRoomSerializer(chatroom)
+        return Response(serializer.data)
 
 
-def message(request, pk):
-    stu = Message.objects.get(id=pk)
-    serializer = MessageSerializer(stu)
-    json_data = JSONRenderer().render(serializer.data)
-    return HttpResponse(json_data, content_type='application/json')
+class ChatRoomMessagesView(ListAPIView):
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        chatroom_id = self.kwargs['chatroom_id']
+        return Message.objects.filter(chatroom_id=chatroom_id).order_by('created_at')
 
 
-@csrf_exempt
-@authentication_classes([BasicAuthentication])
-@permission_classes([IsAuthenticated])
-def message_post(request):
-    if request.method == 'POST':
-        json_data = request.body
-        stream = io.BytesIO(json_data)
-        python_data = JSONParser().parse(stream)
-        serializer = MessageSerializer(data=python_data)
+class SendMessage(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, chatroom_id=None):
+        data = request.data.copy()
+        sender = request.user
+
+        # If chatroom_id is provided in the URL, add it to the request data
+        if chatroom_id:
+            data['chatroom'] = chatroom_id
+
+        data['sender'] = sender.id  # Set the sender in the data
+
+        serializer = MessageSerializer(data=data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
-            res = {'msg': 'Data Created'}
-            return JsonResponse(res, status=201)
-        else:
-            return JsonResponse(serializer.errors, status=400)
-    else:
-        return JsonResponse({'error': 'Only POST method is allowed'}, status=405)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class MessagePost(APIView):
-    def post(self, request, format=None):
-        serializer = MessageSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'msg': 'Data Created'}, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class UpdateMessage(UpdateAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
 
 
-# @csrf_exempt
-# def message_edit(request):
-#     if request.method == 'PUT':
-#         json_data = request.body
-#         stream = io.BytesIO(json_data)
-#         python_data = JSONParser.parse(stream)
-#         id = python_data.get('id')
-#         message = Message.objects.get(id=id)
-#         serializer = MessageSerializer(message, data=python_data, partial=True)
-#         if serializer.is_valid():
-#             serializer.save()
-#             res = {'msg': 'Data Updated'}
-#             json_data = JSONRenderer().render(res)
-#             return HttpResponse(json_data, content_type='application/json')
-#
-
-@api_view(['PUT', 'PATCH'])
-@csrf_exempt
-def edit_message(request, pk=None):
-    try:
-        message = Message.objects.get(pk=pk)
-    except Message.DoesNotExist:
-        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)
-    partial = request.method == 'PATCH'
-    serializer = MessageSerializer(message, data=request.data, partial=partial)
-
-    if serializer.is_valid():
-        serializer.save()
-        return Response({'msg': 'Successfully updated'}, status=status.HTTP_200_OK)
-
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class DestroyMessage(DestroyAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
 
 
-@api_view(['DELETE'])
-def delete_message(request, pk=None):
-    try:
-        message = Message.objects.get(pk=pk)
-        message.delete()
-        return Response({'msg': 'Message Successfully deleted'}, status=status.HTTP_200_OK)
-    except Message.DoesNotExist:
-        return Response({'error': 'Message not found'}, status=status.HTTP_404_NOT_FOUND)
+class CreateMessage(CreateAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        sender = self.request.user
+        serializer.save(sender=sender)
 
 
-# class MessageListCreateView(generics.ListCreateAPIView):
-#     queryset = Message.objects.all()
-#     serializer_class = MessageSerializer
-#
-#
-# class MessageRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Message.objects.all()
-#     serializer_class = MessageSerializer
-
-def set_session(request):
-    request.session['name'] = 'Hadi'
-    return JsonResponse({'message': 'Session set'})
+class MessageList(ListAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    # pagination_class = CustomPagination
+    permission_classes = [IsAuthenticated]
 
 
-def get_session(request):
-    value = request.session.get('name', default='Session key not set')
-    return JsonResponse({'name': value})
+class RetrieveMessage(RetrieveAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+    permission_classes = [IsAuthenticated]
+
+
+
