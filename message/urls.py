@@ -2,9 +2,10 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('get-or-create-chatroom/', GetOrCreateChatRoomView.as_view()),
+    path('get-or-create-chatroom/', get_or_create_chatroom),
+    path('chatroom-list/', chatroom_list),
     # Get Chatroom-wise message
-    path('chatroom/<int:chatroom_id>/messages/', ChatRoomMessagesView.as_view(), name='chatroom-messages'),
+    path('chatroom/<int:chatroom_id>/messages/', chatroom_messages, name='chatroom-messages'),
     # Post a new message in a Chatroom
     path('chatroom/<int:chatroom_id>/send-message/', SendMessage.as_view(), name='send-message'),
 

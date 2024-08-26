@@ -21,6 +21,7 @@ class ChatRoom(models.Model):
 class Message(models.Model):
     chatroom = models.ForeignKey(ChatRoom, related_name='messages', on_delete=models.CASCADE)
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
+    url = models.URLField(max_length=255, blank=True, null=True)
     message = models.CharField(max_length=2000, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

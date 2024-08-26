@@ -2,47 +2,66 @@ from .custom_pagintaion import CustomPagination
 from account.renderers import UserRenderer
 from rest_framework.filters import SearchFilter
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from .models import *
 from .serializers import *
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, RetrieveAPIView, UpdateAPIView
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 
 
-class GetOrCreateChatRoomView(APIView):
-    permission_classes = [IsAuthenticated]
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def get_or_create_chatroom(request):
+    print('request', request)
+    user1 = request.user
+    user2_id = request.data.get('user2_id')
 
-    def post(self, request):
-        user1 = request.user
-        user2_id = request.data.get('user2_id')
+    try:
+        user2 = User.objects.get(id=user2_id)
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404)
 
-        try:
-            user2 = User.objects.get(id=user2_id)
-        except User.DoesNotExist:
-            return Response({"error": "User not found"}, status=404)
+    # Check if a chatroom already exists between these two users
+    chatroom = ChatRoom.objects.filter(participants=user1).filter(participants=user2).first()
 
-        # Check if a chatroom already exists between these two users
-        chatroom = ChatRoom.objects.filter(participants=user1).filter(participants=user2).first()
+    if not chatroom:
+        # If no chatroom exists, create a new one
+        chatroom = ChatRoom.objects.create()
+        chatroom.participants.add(user1, user2)
+        chatroom.save()
 
-        if not chatroom:
-            # If no chatroom exists, create a new one
-            chatroom = ChatRoom.objects.create()
-            chatroom.participants.add(user1, user2)
-            chatroom.save()
-
-        serializer = ChatRoomSerializer(chatroom)
-        return Response(serializer.data)
+    serializer = ChatRoomSerializer(chatroom)
+    return Response(serializer.data)
 
 
-class ChatRoomMessagesView(ListAPIView):
-    serializer_class = MessageSerializer
-    permission_classes = [IsAuthenticated]
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def chatroom_list(request):
+    user = request.user
+    # Fetch chatrooms where the user has sent at least one message
+    chatrooms = ChatRoom.objects.filter(messages__sender=user).distinct()
 
-    def get_queryset(self):
-        chatroom_id = self.kwargs['chatroom_id']
-        return Message.objects.filter(chatroom_id=chatroom_id).order_by('created_at')
+    serializer = ChatRoomSerializer(chatrooms, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def chatroom_messages(request, chatroom_id):
+    try:
+        # Filter messages by chatroom_id and order by created_at
+        messages = Message.objects.filter(chatroom_id=chatroom_id).order_by('created_at')
+        # Serialize the data
+        serializer = MessageSerializer(messages, many=True)
+
+        # Return the serialized data as a response
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    except Message.DoesNotExist:
+        return Response({"detail": "Messages not found."}, status=status.HTTP_404_NOT_FOUND)
 
 
 class SendMessage(APIView):
@@ -98,6 +117,3 @@ class RetrieveMessage(RetrieveAPIView):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
     permission_classes = [IsAuthenticated]
-
-
-

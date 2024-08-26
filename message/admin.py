@@ -11,7 +11,7 @@ class ChatRoomAdmin(admin.ModelAdmin):
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ['chatroom', 'sender', 'message', 'created_at', 'updated_at']
+    list_display = ['chatroom', 'sender', 'message', 'url', 'created_at', 'updated_at']
     search_fields = ['chatroom__name', 'sender__email', 'message']
 
 
